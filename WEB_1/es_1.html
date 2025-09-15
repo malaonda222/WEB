@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Benvenuti nel Nostro Sito!</h1>
+        <p style="width: 1020px;">    
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    <h3>Crea un Nuovo Account</h3>
+    <form method="post" action="esegui.php">
+        <input type="text" placeholder="Nome"><input type="text" placeholder="Cognome"><br>
+        <input type="text" placeholder="Il tuo indirizzo e-mail"><br>
+        <input type="text" placeholder="Nuova Password"><br>
+        Uomo<input type="radio" name="sesso" value="M"> Donna<input type="radio" name="sesso" value="F">
+        <br><br>
+        Come hai conosciuto il sito? <select name="Conoscenza">
+        <option value="I">Consigliato da Amici</option>
+        <option value="E">Pubblicità online</option>
+        </select><br>
+
+        <h2>Parlaci di te!</h2><textarea name="commento" rows="15" cols="50"></textarea>
+        <br>
+        <br>
+        <input type="checkbox" name="Accetto"> Accetto le condizioni <br>
+
+        <!-- SUBMIT -->
+         <br>
+        <input type="submit" name="invia" value="Crea Account">
+    </form>
+</body>
+</html>

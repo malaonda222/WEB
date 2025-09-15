@@ -1,0 +1,35 @@
+<!-- Scrivi una funzione che accetti un array di numeri come parametro e ritorni 
+ il numero più grande presente nell'array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trova Massimo</title>
+</head>
+<body>
+    <script>
+        const caratteri = 5
+        const numeroMassimo = 30
+        let arr = []
+
+        for(let i = 0; i < caratteri; i ++){
+            arr.push(Math.floor(Math.random()*numeroMassimo))
+        }
+        console.log(`Array generato: ${arr}`)
+
+        function trovaMax(arr){
+            let max = arr[0];
+            for(let i = 0; i < arr.length; i ++){
+                if(arr[i] > max){
+                    max = arr[i];
+                }
+            }
+            return `Numero più grande: ${max}`;
+        }
+
+        console.log(trovaMax(arr))
+    </script>
+</body>
+</html>

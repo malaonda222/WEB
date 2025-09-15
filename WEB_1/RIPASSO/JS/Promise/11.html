@@ -1,0 +1,65 @@
+<!-- Esercizio 14 – Somma ore corsi
+Tema: Array di oggetti annidati + reduce
+Obiettivo: Calcolare il totale delle ore di tutti i corsi di uno studente.
+Traccia:
+    1. Parti da un array di studenti, ciascuno con nome e una lista di corsi.
+    2. Ogni corso contiene un nome e il numero di ore.
+    3. Scrivi una funzione che dato uno studente restituisce il totale delle ore di tutti i suoi corsi.
+    4. Stampa il totale per almeno uno studente di esempio.
+Suggerimento: Usa reduce per sommare le ore all’interno dell’array dei corsi.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+    {
+        nome: "Gianni",
+        corsi: [
+            { nomeCorso: "Matematica", ore: 10 },
+            { nomeCorso: "Informatica", ore: 12 },
+            { nomeCorso: "Fisica", ore: 8 }
+        ]
+    },
+    {
+        nome: "Aurelio",
+        corsi: [
+            { nomeCorso: "Matematica", ore: 9 },
+            { nomeCorso: "Chimica", ore: 11 },
+            { nomeCorso: "Biologia", ore: 7 }
+        ]
+    },
+    {
+        nome: "Silvana",
+        corsi: [
+            { nomeCorso: "Informatica", ore: 15 },
+            { nomeCorso: "Fisica", ore: 10 }
+        ]
+    }
+]; 
+
+        function totaleOre(studente){
+            const oreTorali = studente.corsi.reduce((acc, corso) => acc + corso.ore, 0);
+            return oreTotali;
+        }
+        console.log(`Ore totali Gianni: ${totaleOre(studenti[0])}`)
+        
+        const totaleOreStudenti = (studenti) => {
+            return studenti.map((studente) => {
+                return {
+                    nome: studente.nome,
+                    oreTotali: studente.corsi.reduce((acc, corsi) => acc + corsi.ore, 0),
+                }
+            })
+        }
+        const totali = totaleOreStudenti()
+        console.log(totali);
+
+    </script>
+</body>
+</html>

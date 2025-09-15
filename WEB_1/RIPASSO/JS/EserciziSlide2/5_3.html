@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovina il numero</title>
+</head>
+<body>
+    <h2 id="title"></h2>
+    <input type="number" id="tentativo" min="0" max="100">
+    <button onClick="indovina()">Controlla</button>
+    <p id="messaggio"></p>
+
+    <script>
+        document.getElementById("title").innerHTML = "Gioco: Invina il numero!";
+        
+        const numeroCasuale = Math.floor(Math.random() * 101);
+        console.log(numeroCasuale);
+        let tentativo = 0
+
+        function indovina(){
+            let input = document.getElementById("tentativo");
+            let bottone = document.getElementById("controlla");
+            let messaggio = document.getElementById("messaggio");
+            let valoreStr = input.value.trim();
+
+            if(valore === ""){
+                messaggio.textContent = "Inserisci un numero prima di cliccare!"
+                return;
+            }
+
+            let numProva = parseInt(valoreStr);
+
+            if(isNaN(numProva)){
+                alert("Inserire un altro numero valido")
+                return;
+            }
+
+            tentativo++;
+
+            if(numProva > numeroCasuale){
+                alert("Il numero è troppo alto")
+            }if(numProva < numeroCasuale){
+                alert("Il numero è troppo basso")
+            }else{
+                alert("Numero indovinato")
+                input.disabled = true;
+                bottone.disabled = true;
+            }
+        }
+        indovina()       
+        
+    </script>
+    
+</body>
+</html>

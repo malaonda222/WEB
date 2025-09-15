@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 01</title>
+</head>
+<body>
+    <script>
+        const oggi= new Date()
+        const opzioni = [
+            {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                weekday: "long",
+            },
+            {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true
+            },
+            {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                weekday: "short",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            }
+        ]
+
+        console.log(oggi.toLocaleString(undefined, opzioni[2]))
+
+        opzioni.forEach(opzione => {
+            const h2 = document.createElement("h3")
+            const dataFormattata = oggi.toLocaleString(undefined, opzione)
+            const text = document.createTextNode(dataFormattata)
+            h2.appendChild(text)
+            document.querySelector("body").appendChild(h2)
+        })
+        
+    </script>
+</body>
+</html>

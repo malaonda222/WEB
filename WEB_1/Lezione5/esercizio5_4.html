@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: black;">Linee orizzontali da 0% a 100%</h1>
+    <div id="contenitore"></div>
+    
+    <script>
+        function lunghezza(){
+            var contenitore = document.getElementById("contenitore")
+
+            contenitore.innerHTML = ""
+        
+            for (var i = 0; i <= 100; i += 5) {
+                var linea = document.createElement("hr");
+
+                linea.style.width = i + "%";
+                linea.style.height = "4px";
+                linea.style.backgroundColor = "white";
+                linea.style.border = "none"
+                linea.style.margin = "5px 0";
+
+                contenitore.append(linea);
+            }
+        }   
+
+        document.body.onclick = lunghezza;
+        
+    </script>
+    
+</body>
+</html>

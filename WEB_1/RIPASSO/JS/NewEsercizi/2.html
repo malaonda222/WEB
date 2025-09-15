@@ -1,0 +1,30 @@
+<!-- Scrivi una funzione che accetti una stringa come parametro e ritorni il numero di 
+vocali presenti (a, e, i, o, u – sia minuscole che maiuscole). 
+La funzione deve ignorare le maiuscole/minuscole (es. "A" conta come vocale).
+Considera solo le vocali dell’alfabeto italiano: a, e, i, o, u.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Vocali</title>
+</head>
+<body>
+    <script>
+        function contaVocali(parola) {
+            const vocali = ['a', 'e', 'i', 'o', 'u'];
+            let contatore = 0;
+            parola = parola.toLowerCase()
+
+            for(let i = 0; i < parola.length; i++){
+                if(vocali.includes(parola[i])){
+                    contatore += 1;
+                }
+            }
+        }
+
+        console.log(contaVocali("Ciao Mondo"))
+    </script>
+</body>
+</html>

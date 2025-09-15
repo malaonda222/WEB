@@ -1,0 +1,30 @@
+<!-- Trova il secondo numero più grande
+Scrivi una funzione secondoMassimo(arr) che restituisce il secondo numero più 
+grande in un array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondo numero più grande</title>
+</head>
+<body>
+    <script>
+        function secondoNumero(arr){
+            if(arr.length < 2){
+                return "Array troppo corto"
+            }
+            const massimo = MAth.max(...arr)
+            const senzaMassimo = arr.filter(n => n !== massimo);
+            
+            if (senzaMassimo.length == 0){
+                return "Tutti i numeri sono uguali";
+            }
+            const secondoMassimo = Math.max(...senzaMassimo);
+            return secondoMassimo
+            }
+        console.log(secondoNumero([1, 2, 3, 4, 6, 4]))
+    </script>
+</body>
+</html>

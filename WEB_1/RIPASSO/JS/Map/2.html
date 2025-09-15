@@ -1,0 +1,23 @@
+<!-- Hai un array di oggetti che rappresentano persone. 
+Usa map() per creare un nuovo array contenente solo i nomi delle persone. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const persone = [
+            { nome: "Luca", eta: 25 },
+            { nome: "Giulia", eta: 30 },
+            { nome: "Marco", eta: 20 }
+        ];
+        
+        const nomiPersone = persone.map(persona => persona.nome)
+        console.log(nomiPersone)
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- Tema: Array di oggetti + filter + map + asincronia
+Traccia:
+    1. Parti da un array di prodotti, ciascuno con nome, prezzo e inStock.
+    2. Filtra solo i prodotti con inStock: true.
+    3. Applica uno sconto del 20% al prezzo di ciascun prodotto filtrato.
+    4. Stampa il nuovo array di prodotti scontati.
+Obiettivo: Combina filter e map in sequenza con asincronia usando async/await o Promise simulate  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prodottiNuovi = [
+            { nome: "Laptop", prezzo: 1200, inStock: true },
+            { nome: "Smartphone", prezzo: 800, inStock: false },
+            { nome: "Cuffie", prezzo: 150, inStock: true },
+            { nome: "Monitor", prezzo: 300, inStock: true },
+            { nome: "Tastiera", prezzo: 100, inStock: false },
+        ];
+
+        function mettiSconto(prodotti){
+            return new Promise((resolve) => {
+                const scontati = prodotti.filter((prodotto) => prodotto.inStock === true).map((prodotto) => ({
+                    nome: prodotto.nome,
+                    prezzo: prodotto.prezzo,
+                    prezzoScontato: Number(prodotto.prezzo * 0.80).toFixed(2)
+                }));
+            }, 1000);
+        }
+
+        async function prodottiScontati(){
+            try{
+                let risultato = await mettiSconto(prodotti);
+                console.log("Risultato: ", risultato)
+            }catch(e){
+                console.log("Errore durante il fetch: ", e)
+            }
+        }
+        prodottiScontati(); 
+
+    </script>
+    
+</body>
+</html>

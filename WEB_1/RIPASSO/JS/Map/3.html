@@ -1,0 +1,25 @@
+<!-- Hai un array di oggetti che rappresentano prodotti in un negozio online. 
+Ogni prodotto ha un nome e un prezzo in euro. 
+Usa map() per creare un nuovo array che contenga solo i prezzi scontati del 20%.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prodotti = [
+            { nome: "Maglietta", prezzo: 20 },
+            { nome: "Jeans", prezzo: 50 },
+            { nome: "Scarpe", prezzo: 80 }
+        ];
+
+        const prodottiScontati = prodotti.map(prodotto => prodotto.prezzo * 0.80)
+        console.log(prodottiScontati)
+        
+    </script>
+</body>
+</html>

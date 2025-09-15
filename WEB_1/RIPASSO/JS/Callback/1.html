@@ -1,0 +1,52 @@
+<!--  Somma dei voti con callback
+ Traccia:
+    1. Crea un array di oggetti studenti, ognuno con nome e voti (array di numeri).
+    2. Scrivi una funzione calcolaMedia che riceve un array di voti e restituisce la media.
+    3. Scrivi una funzione stampaMedia che prende uno studente e una callback per calcolare
+       la media, e stampa "Nome: X, Media: Y".
+    4. Applica stampaMedia a tutti gli studenti usando forEach e una callback arrow function. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            {
+                nome: "Elena",
+                voti: [
+                    18, 21, 22
+                ]
+            },
+            {
+                nome: "Lorenzo",
+                voti: [
+                    13, 30, 24
+                ]
+            }
+        ]
+
+        function calcolaMedia(voti){
+            let somma = 0
+            for(let voto of voti){
+                somma += voto 
+            }
+            let media = somma / voti.length
+            return media;
+        }
+
+        function stampaMedia(studente, calcolaMedia){
+            const media = calcolaMedia(studente.voti);
+            console.log(`Nome: ${studente.nome}, Media: ${media}`)
+        }
+
+        studenti.forEach(studente => {
+            stampaMedia(studente, calcolaMedia);
+        });
+    </script>
+</body>
+</html>

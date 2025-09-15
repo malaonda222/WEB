@@ -1,0 +1,32 @@
+<!-- Scrivi una funzione che prenda un array di numeri e restituisca la 
+ somma totale di tutti gli elementi -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somma Numeri</title>
+</head>
+<body>
+    <script>
+        function sommaNumeri(arr){
+            if(!Array.isArray(arr) || arr == null){
+                return 0;
+            }
+            if (arr.length == 0){
+                return 0
+            }
+            let sommaTotale = 0
+            for (const element of arr){
+                if(typeof element === 'number'){
+                    sommaTotale += element
+                }               
+            }
+        return sommaTotale
+        }
+
+        console.log(sommaNumeri([1, 4, 5, 39, 20]))
+    </script>
+</body>
+</html>

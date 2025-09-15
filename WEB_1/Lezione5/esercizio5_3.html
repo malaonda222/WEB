@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco: Indovina il numero!</title>
+</head>
+<body>
+    <h1>Indovina il numero</h1>
+    <p> Inserisci un numero tra 0 e 100:</p>
+    <input type="number" id="tentativoInput" min="0" max="100">
+    <button onclick="indovina()">Controlla</button>
+    <p id="messaggio"></p>
+
+    <script>
+        
+        var numero_casuale = Math.floor(Math.random() * 101);
+        let tentativo = 0;
+
+        function indovina() {
+            let input = document.getElementById("tentativoInput");
+            let bottone = document.getElementById("controllaBottone");
+            let messaggio = document.getElementById("messaggio");
+            let valoreStr = input.value.trim();
+
+            if (valoreStr === "") {
+                messaggio.textContent = "Inserisci un numero prima di cliccare!";
+                return;
+            }
+
+            let num_prova = parseInt(valoreStr)
+            
+            if (isNaN(num_prova)) {
+                alert("Per favore inserisci un altro numero valido.");
+                return;
+            }
+            
+            tentativo ++;
+
+            if (num_prova == numero_casuale) {
+                alert("Complimenti! Hai indovinato il numero!");
+                input.disabled = true;       
+                bottone.disabled = true;
+            }else if (num_prova < numero_casuale) {
+                alert("Numero troppo basso. Riprova.");
+            }else{
+                alert("Numero troppo alto. Riprova.");
+            }
+        }
+        indovina(); //richiamo la funzione
+    </script>
+    
+</body>
+</html>

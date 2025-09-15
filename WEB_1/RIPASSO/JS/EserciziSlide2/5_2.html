@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="giorno"></div>
+    <script>
+        const dentroRange = ((a) => a <=7 && a >= 0 ? "TRUE" : "FALSE");
+
+        function giornoSettimana(a){
+            if(dentroRange(a)){
+                var giorni = ["lunedi", "martedi", "mercoledi", "giovedi", "venerdi", "sabato", "domenica"];
+                return "Il giorno corrispondente al numero è: ", giorni[a - 1];
+        }else{
+            return "Peccato, non posso indovinare il giorno."
+        }
+    }
+
+    input = giornoSettimana(2);
+    document.getElementById("giorno").innerHTML = input
+    console.log(input);
+    </script>
+</body>
+</html>

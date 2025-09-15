@@ -1,0 +1,32 @@
+/*Creare un progetto Javascript che dichiari e contestualmente inizializzi una variabile x = 10;
+che dichiari la variabile y e successivamente assegni ad y il valore di x; che dichiari e contestualmente 
+inizializzi la variabile z e gli assegna un nome di persona a proprio piacimento e tramite output stampa 
+il valore delle variabili ed il tipo.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Valori delle variabili</h1>
+    <p id="valore-x"></p>
+    <p id="valore-y"></p>
+    <p id="valore-z"></p>
+    <script>
+        let x = 10;
+        document.getElementById("valore-x").innerHTML = "Valore di x: " + x;
+        console.log("Tipo di valore: ", typeof(x));
+
+        let y = x;
+        document.getElementById("valore-y").innerHTML = "Valore di y: " + x;
+        console.log("Tipo di valore: ", typeof(y));
+
+        let z = "Mario";
+        document.getElementById("valore-z").innerHTML = `Valore di z: ${z}`;
+        console.log("Tipo di valore: ", typeof(z));
+    </script>
+</body>
+</html>

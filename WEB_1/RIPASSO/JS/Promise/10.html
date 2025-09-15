@@ -1,0 +1,91 @@
+<!-- Tema: Array di oggetti + filter + map + asincronia
+Traccia:
+    1. Parti da un array di prodotti, ciascuno con nome, prezzo e inStock.
+    2. Filtra solo i prodotti con inStock: true.
+    3. Applica uno sconto del 20% al prezzo di ciascun prodotto filtrato.
+    4. Stampa il nuovo array di prodotti scontati.
+Obiettivo: Combina filter e map in sequenza con asincronia usando async/await o Promise simulate  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prodotti = [
+            { nome: "Laptop", prezzo: 1200, inStock: true },
+            { nome: "Smartphone", prezzo: 800, inStock: false },
+            { nome: "Cuffie", prezzo: 150, inStock: true },
+            { nome: "Monitor", prezzo: 300, inStock: true },
+            { nome: "Tastiera", prezzo: 100, inStock: false },
+        ];
+        
+        const prodottiStockTrue = prodotti.filter((prodotto) => prodotto.inStock === true);
+        console.log(prodottiStockTrue);
+
+        const prodottiScontati = prodottiStockTrue.map((prodotto) => ({
+            ...prodotto,
+            prezzoScontato: prodotto.prezzo * 0.8
+        })); 
+        console.log(prodottiScontati);
+
+        // con Promise 
+        const prodottiNuovi = [
+            { nome: "Laptop", prezzo: 1200, inStock: true },
+            { nome: "Smartphone", prezzo: 800, inStock: false },
+            { nome: "Cuffie", prezzo: 150, inStock: true },
+            { nome: "Monitor", prezzo: 300, inStock: true },
+            { nome: "Tastiera", prezzo: 100, inStock: false },
+        ];
+
+        function prodottiInStock(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    let prodStock = prodottiNuovi.filter(prodotto => prodotto.inStock === true)
+                    resolve(prodStock)
+                }, 1000)
+            });
+        };
+
+        function calcoloSconto(prodotti){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    let scontati = prodotti.map(prodotto => ({
+                        ...prodotto,
+                        prezzoScontato: +(prodotto.prezzo * 0.80).toFixed(2)
+                    }));
+                    resolve(scontati); 
+                }, 1000)
+            });
+        };
+
+        prodottiInStock()
+            .then(prodotti => {
+                console.log("Prodotti in stock: ", prodotti);
+                return calcoloSconto(prodotti);
+            })
+            .then(risultato => {
+                console.log("Risultato: ", risultato)
+            })
+            .catch(e => {
+                console.log("Errore;", e)
+            })
+        
+        async function calcolo(){
+            try{
+                let prodotti = await prodottiInStock();
+                console.log("Prodotti in stock: ", prodotti);
+                let risultato = await calcoloSconto(prodotti);
+                console.log("Prodotti scontati: ", risultato);
+            }catch(e){
+                console.log("Errore: ", e);
+            }
+        }
+        calcolo(); 
+
+    </script>
+</body>
+</html>

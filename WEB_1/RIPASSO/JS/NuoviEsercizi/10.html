@@ -1,0 +1,37 @@
+<!-- Obiettivo: Calcolare il totale dei prezzi dei prodotti sopra una certa soglia.
+Traccia:
+    1. Filtra i prodotti con prezzo ≥ soglia.
+    2. Eventualmente trasforma i prezzi con map (ad esempio arrotonda a 2 decimali).
+    3. Calcola il totale dei prezzi con reduce. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prodotti = [
+            { nome: "Shampoo", prezzo: 2.4499 },
+            { nome: "Latte", prezzo: 0.9963 },
+            { nome: "Petto di Pollo", prezzo: 8.4941 },
+            { nome: "Yogurt Greco", prezzo: 2.655 }
+        ];
+        const soglia = 2.75;
+
+        const sopraSoglia = prodotti.filter(prodotto => prodotto.prezzo > soglia);
+
+        const newArr = sopraSoglia.map(prodotto => {
+            parseInt(prodotto.prezzo.toFixed(2));
+        });
+
+        const totale = newArr.reduce((acc, importo) => (acc + importo), 0);
+
+        console.log("Importo totale dei prodotti sopra la soglia: ", totale.toFixed(2))
+
+
+    </script>
+</body>
+</html>

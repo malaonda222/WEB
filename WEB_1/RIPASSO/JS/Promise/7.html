@@ -1,0 +1,46 @@
+<!-- Scrivi una funzione che prende un numero e, dopo 500ms, restituisce una Promise che:
+si risolve con un messaggio se il numero è pari
+si rigetta con un errore se il numero è dispari -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isEvenAsync(x){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(x % 2 == 0){
+                        resolve('Il numero è pari')
+                    }else{
+                        reject('Il numero è dispari')
+                    }
+                }, 500);
+            });
+        };
+
+        isEvenAsync(5)
+            .then(message => {
+                console.log(message)
+            })
+            .catch(err => {
+                console.log(err)
+            });
+        
+        async function controllaNumero(){
+            try{
+                const messaggio = await isEvenAsync(8)
+                console.log(messaggio)
+            }catch(e){
+                console.log(e)
+            }
+        }
+        controllaNumero()
+    </script>
+</body>
+</html>

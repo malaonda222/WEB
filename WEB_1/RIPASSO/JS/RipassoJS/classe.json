@@ -1,0 +1,34 @@
+{
+    "nome": "4A",
+    "numeroAlunni": 21,
+    "scuolaSabato": false,
+    "scuola": "Scuola elementare Machiavelli",
+    "insegnanti": [
+        {
+            "nome": "Anna",
+            "cognome": "Blu",
+            "materieInsegnate": ["Storia", "Italiano", "Geografia"]
+        },
+        {
+            "nome": "Giorgio",
+            "cognome": "Verde",
+            "materieInsegnate": ["Matematica", "Geometria", "Algebra"]
+        }
+    ],
+    "alunni": [
+        {
+            "nome": "Marco", 
+            "cognome": "Qwerty"
+        },{
+            "nome": "Leonardo", 
+            "cognome": "Rossi"
+        },{
+            "nome": "Maria", 
+            "cognome": "Gialli"
+        }
+    ],
+    "orari": {
+        "mattina": ["Storia", "Matematica"],
+        "pomeriggio":["Italiano", "Geografia"]
+    }
+}

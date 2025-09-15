@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ottieniUtente(id, callback) {
+            setTimeout(() => {
+            callback({ id: id, nome: 'Mario' });
+            }, 1000);
+        }
+        function ottieniOrdini(utente, callback) {
+            setTimeout(() => {
+            callback(['Ordine 1', 'Ordine 2']);
+            }, 1000);
+        }
+        // Utilizzo
+        ottieniUtente(123, function(utente) {
+            console.log('Utente ottenuto:', utente.nome);
+            ottieniOrdini(utente, function(ordini) {
+            console.log('Ordini ottenuti:', ordini);
+            });
+        })
+    </script>
+</body>
+</html>

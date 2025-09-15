@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prodotti = [
+            {
+                nome: "gioielli",
+                prezzo: 29
+            },
+            {
+                nome: "violino",
+                prezzo: 200
+            },
+            {
+                nome: "pianoforte",
+                prezzo: 350
+            }
+        ];
+
+        function applicaSconto(prezzo, callback){
+            return callback(prezzo);
+        }
+
+        const sconto10 = prezzo => prezzo * 0.9
+
+        function stampaPrezzo(prodotto, calcolaPrezzoScontato){
+            const prezzoScontato = calcolaPrezzoScontato(prodotto.prezzo);
+            console.log(`Prodotto: [${prodotto.nome}], Prezzo originale: [${prodotto.prezzo}], Prezzo scontato; [${prezzoScontato}]`)
+        }
+
+        prodotti.forEach(prodotto => {
+            stampaPrezzo(prodotto, prezzo => applicaSconto(prezzo, sconto10))
+        })
+    </script>
+</body>
+</html>

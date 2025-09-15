@@ -1,0 +1,59 @@
+<!-- Simula una chiamata asincrona a un “server” che restituisce 
+i dati di un utente, dati finti come se arrivassero da un database. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const utenti = {
+            1: { nome: "Anna", eta: 30 },
+            2: { nome: "Luca", eta: 25 },
+        };
+        function getUserById(id){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(id in utenti){
+                        resolve({
+                            id: id, 
+                            nome: utenti[id].nome,
+                            eta: utenti[id].eta
+                        })  
+                    }else{
+                        reject(`Id ${id} non esiste`)
+                    }
+                }, 1000);
+            });
+        };
+
+        const input = prompt("Inserisci l'ID dell'utente: ");
+        const userId = parseInt(input);
+
+        getUserById(1)
+            .then(user => {
+                console.log("Dati utente: ", user)
+            })
+            .catch(e => {
+                console.log("Errore: ", e)
+            })
+        
+        if(isNaN(userId)){
+            console.log("Errore. ID inserito non è valido!")
+        }else{  
+            async function prelevaDati(){
+                try{
+                    let dati = await getUserById(userId)
+                    console.log("Dati utente: ", dati)
+                }catch(e){
+                    console.log("Errore durante il fetch: ", e)
+                }
+            }
+        }
+        prelevaDati();
+    </script>
+</body>
+</html>

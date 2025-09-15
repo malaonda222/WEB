@@ -1,0 +1,31 @@
+<!-- Scrivi una funzione chiamata contaOccorrenze(arr, numero) che riceve:
+un array di numeri,
+un numero da cercare,
+e restituisce quante volte quel numero appare nell'array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Occorrenze</title>
+</head>
+<body>
+    <script>
+        function contaOccorrenze(arr, numero){
+            let counter = 0
+            for(const element of arr){
+                if(numero === element){
+                    counter += 1
+                }
+            }
+        if (counter == 0){
+            return 'Il numero non compare mai nella lista'
+        }else{
+        return counter
+        }
+    }
+    console.log(contaOccorrenze([1, 2, 2, 3, 2, 4], 2))
+    </script>
+</body>
+</html>

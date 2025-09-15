@@ -1,0 +1,83 @@
+body {
+    background-color: rgb(198, 247, 198);
+    margin: 0;
+    padding: 0;
+}
+
+.contenitore {
+    width: 980px;
+    margin: 0 auto;
+    background-color: white;
+    border-collapse: collapse;
+    
+}
+
+.menu-container {
+    background-color: rgb(207, 204, 204);
+    padding: 10px 0;
+}
+
+.menu {
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.colonna-sinistra {
+    width: 270px;
+    vertical-align: top;
+    padding: 10px;
+}
+
+
+.stiletabella {
+    padding: 20px;
+    height: auto;
+    width: 380px;
+}
+
+.maggioriinfo {
+    text-align: right;
+    font-weight: bold;
+    font-style: italic
+}
+
+.tabellascritta {
+    background-color: rgb(221, 220, 220)
+}
+
+.colore {
+    color: rgb(14, 121, 14)
+}
+
+.immaginisinistra {
+    width: 270px
+}
+
+.contenuto-principale {
+    width: 20px;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.descrizione-servizi {
+    margin-bottom: 30px;
+}
+
+.scheda-libro {
+    width: 150px;
+    vertical-align: top;
+}
+
+.immagini {
+    width: 150px;
+    vertical-align: top;
+}
+
+.colonnadestra {
+    width: 470px;
+    margin-left: 20px;
+    margin-right: 15px;
+}

@@ -1,0 +1,34 @@
+<!-- Obiettivo: Ottenere un array solo con gli studenti promossi.
+Traccia:
+    1. Hai un array di studenti, ciascuno con proprietà nome e media.
+    2. Usa filter per creare un nuovo array contenente solo gli studenti con media ≥ 6.
+    3. Stampa il nuovo array in console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            { nome: "Lisa", media: 8 },
+            { nome: "Luca", media: 5.9 },
+            { nome: "Daniele", media: 4.5 },
+            { nome: "Davide", media: 6.5 },
+        ];
+
+        const studentiPromossi = studenti.filter((studente => studente.media >= 6));
+        console.log(studentiPromossi);
+
+        // oppure
+        const studentiPromossi2 = studenti.filter(studente => {
+            return studente.media >= 6;
+        });
+        console.log(studentiPromossi2)
+
+    </script>
+</body>
+</html>

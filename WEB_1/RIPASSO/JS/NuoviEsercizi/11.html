@@ -1,0 +1,35 @@
+<!-- Tema: Array di oggetti + map, filter, reduce
+Obiettivo: Creare una stringa con i nomi degli studenti con media ≥ 8 separati da virgola. 
+Traccia:
+1. Filtra gli studenti con media ≥ 8.
+2. Usa map per ottenere un array dei nomi.
+3. Usa reduce per concatenarli in una stringa separata da virgola. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            { nome: "Alice", media: 7 },
+            { nome: "Bruno", media: 8.5 },
+            { nome: "Carla", media: 9 },
+            { nome: "Davide", media: 6.5 }
+        ];
+
+        const studentiPromossi = studenti.filter(studente => studente.media >= 8);
+
+        const nomi = studenti.map(studente => studente.nome);
+
+        const newArr = nomi.reduce((acc, nome) => acc === "" ? nome : acc + ", " + nome, "");
+
+        console.log("Array di nomi: ", nomi);
+        console.log("Array di nomi con virgole: ", newArr);
+    </script>
+</body>
+</html>

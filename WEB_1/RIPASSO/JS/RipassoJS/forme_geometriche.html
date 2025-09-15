@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Forma {
+            constructor(area, perimetro){
+            }
+            area() {
+                return 0;
+            };
+
+            perimetro() {
+                return 0;
+            };
+        }
+
+        class Rettangolo extends Forma {
+            constructor(base, altezza) {
+                super();
+                this.base = base;
+                this.altezza = altezza
+            }
+
+            area() {
+                const risultato = this.base * this.altezza;
+                console.log(`Area rettangolo: ${risultato}`)
+                return risultato;
+            }
+
+            perimetro() {
+                const risultato = (this.base + this.altezza) * 2
+                console.log(`Perimetro rettangolo: ${risultato}`)
+                return risultato;
+            }
+        }
+
+        class Cerchio extends Forma {
+            constructor(raggio) {
+                super();
+                this.raggio = raggio;
+            }
+
+            area() {
+                const risultato = 3.14 * (this.raggio**2)
+                console.log(`Area cerchio: ${risultato}`)
+                return risultato
+            }
+
+            perimetro() {
+                const risultato = 2 * 3.14 * this.raggio 
+                console.log(`Perimetro cechio: ${risultato}`)
+                return risultato
+            }
+        }
+
+        class Triangolo extends Forma {
+            constructor(base, altezza, lato1, lato2, lato3) {
+                super();
+                this.base = base
+                this.altezza = altezza
+                this.lato1 = lato1
+                this.lato2 = lato2 
+                this.lato3 = lato3
+            }
+
+            area() {
+                const risultato = (this.base * this.altezza) / 2
+                console.log(`Area triangolo: ${risultato}`)
+                return risultato
+            }
+
+            perimetro() {
+                const risultato = this.lato1 + this.lato2 + this.lato3 
+                console.log(`Perimetro triangolo: ${risultato}`)
+                return risultato
+            }
+        }
+        
+        
+        const mioRettangolo = new Rettangolo(10, 15)
+        const mioCerchio = new Cerchio(5)
+        const mioTriangolo = new Triangolo(10, 4, 6, 7, 8)
+
+        const forme = [mioRettangolo, mioCerchio, mioTriangolo]
+
+        // for (let forma of forme) {
+        //     console.log(forma.area());
+        //     console.log(forma.perimetro());
+        // }
+
+        for (let i = 0; i < forme.length; i++) {
+            console.log(forme[i].area());
+            console.log(forme[i].perimetro());
+        }
+        
+        // for (let i = 0; i < forme.length; i ++) {
+        //     console.log(forme[i].area());
+        //     console.log(forme[i].perimetro());
+        // }
+
+        // forme.forEach(f => {
+        //     console.log(f.area());
+        //     console.log(f.perimetro());           
+        // });
+
+    </script>
+</body>
+</html>

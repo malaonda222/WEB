@@ -1,0 +1,27 @@
+<!-- Obiettivo: Calcolare la somma di tutti i numeri in un array.
+Traccia:
+    1. Hai un array di numeri.
+    2. Usa reduce per calcolare la somma totale.
+    3. Stampa il risultato.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numeri = [5, 10, 3, 8, 2];
+
+        const somma = numeri.reduce(function(acc, curr){
+            return acc + curr
+        }, 0);
+        console.log(somma)
+
+        const somma1 = numeri.reduce((acc, curr) => acc + curr, 0)
+        console.log(somma1)
+    </script>
+</body>
+</html>

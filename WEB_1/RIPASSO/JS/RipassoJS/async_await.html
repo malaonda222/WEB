@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function hello(){
+            return 'hello';
+        }
+
+        hello().then((value) => {
+            console.log(value)
+        })
+
+               
+        // secondo esempio
+        // await = keyword che mettiamo quando aspettiamo il risultato di una Promise
+    
+        async function hello1() {
+            return greeting = await Promise.resolve('hello');
+        }
+
+        hello1().then(console.log);
+
+
+        // terzo esempio
+        async function myFetch(){
+            let response = await fetch('coffee.jpg');
+            let myBlob = await response.blob();
+
+            let objectURL = URL.createObjectURL(myBlob);
+            let image = document.createElement('img')
+            image.src = objectURL;
+            document.body.appendChild(image);
+        }
+
+        myFetch().catch(e => {
+            console.log('There has been a problem with your fetch operation: ' + e.message);
+        })
+
+        // quarto esempio
+        async function myFetch(){
+            try{
+                let response = await fetch('coffee.jpg');
+                let myBlob = await response.blob();
+
+                let objectURL = URL.createObjectURL(myBlob);
+                let image = document.createElement('img');
+                image.src = objectURL;
+                document.body.appendchild(image);
+            }catch (e) {
+                console.log('There has been a problem with your fetch operation: ' + e.message);
+        }
+
+          
+        myFetch();
+    }
+
+    </script>
+</body>
+</html>

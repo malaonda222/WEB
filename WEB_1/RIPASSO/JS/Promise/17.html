@@ -1,0 +1,51 @@
+<!--Array di Promises
+Obiettivo: Usare Promise.all per aspettare più Promise contemporaneamente.
+Traccia:
+Crea tre Promise usando attendi(ms) con tempi diversi: 500, 1000, 1500 ms
+Usa Promise.all per aspettare che tutte si risolvano
+Stampa tutti i messaggi insieme -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function primaPromise(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Prima attesa risolta 500 ms`)
+                }, 500)
+            });
+        };
+
+        function secondaPromise(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Seconda attesa risolta 1000 ms`)
+                }, 1000)
+            });
+        };
+
+        function terzaPromise(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Terza attesa risolta 1500 ms`)
+                }, 1500)
+            });
+        };
+
+        Promise.all([primaPromise(), secondaPromise(), terzaPromise()])
+            .then((values) => {
+                console.log(values);
+            })
+            .catch((error) => {
+                console.log("Errore in una delle promise: ", error);
+            });
+
+    </script>
+</body>
+</html>

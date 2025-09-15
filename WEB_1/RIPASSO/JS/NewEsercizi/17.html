@@ -1,0 +1,73 @@
+<!-- Traccia: 
+  1. Crea un array di studenti con nome, voti e corso (ogni studente è un oggetto).
+    2. Calcola la media di ciascuno.
+    3. Filtra gli studenti con media >= 8.
+    4. Aggiungi 'bonus: true' a ciascuno.
+    5. Stampa l’array finale.*/-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 22</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            {
+                nome: "Lisa",
+                voti: [
+                    4, 9, 7
+                ],
+                corso: "Letteratura italiana"
+            },
+            {
+                nome: "Marco",
+                voti: [
+                    3, 8, 8
+                ],
+                corso: "Inglese"
+            },
+            {
+                nome: "Luca",
+                voti: [
+                    4, 9, 2
+                ],
+                corso: "Scienze"
+            }
+        ]
+        
+        arr.forEach(studente => {
+            somma = 0
+            for(let voto of studente.voti){
+                somma += voto
+            }
+            let media = somma / studente.voti.length
+            studente.media = media
+        });
+        let studentiPromossi = arr.filter(studente => studente.media >= 8)
+
+        studentiPromossi.forEach(studente => {
+            studente.bonus = true
+        });
+
+        for(const studente of arr){
+            console.log(studente)
+        }
+
+        const calcolaMedie = arr.map((persona => {
+            const totale = persona.voti.reduce((acc, voto) => acc + voto, 0);
+            const media = totale / persona.voti.length;
+            return {
+                nome: persona.nome,
+                voti: persona.voti,
+                corso: persona.corso,
+                media: Number(media.toFixed(2))
+            } 
+        }))
+
+    </script>
+</body>
+</html>   

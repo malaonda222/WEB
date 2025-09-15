@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="numero-max"></p>
+
+    <script>
+        var numeri = [10, 88, 4, 8, 3, 69, 71]
+        var max = numeri[0]
+        for (var i = 1; i < numeri.length; i++){
+            if (numeri[i] > max){
+                max = numeri[i];
+            }
+        }
+    
+        console.log("Numero più grande: ", max)
+
+        document.getElementById("numero-max").innerHTML = "Numero massimo: " + max
+
+    </script>
+</body>
+</html>

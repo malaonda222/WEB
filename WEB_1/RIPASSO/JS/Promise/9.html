@@ -1,0 +1,76 @@
+<!-- Scrivi una serie di funzioni asincrone che fanno queste cose in sequenza,
+una dopo l’altra:
+Simula il caricamento di un dato (es. numero casuale) dopo 1 secondo 
+(Promise che si risolve con un numero da 1 a 10).
+Verifica se il numero è maggiore di 5: se sì, la Promise si risolve; se no, 
+si rigetta con un errore.
+Se il numero è valido, moltiplicalo per 2 dopo 1 secondo (Promise).
+Stampa il risultato finale. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function numeroCasuale(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    let numero = Math.floor(Math.random() *10) + 1;
+                    resolve(numero)
+                }, 1000)
+            });
+        };
+
+        function verificaNumero(numero){
+            return new Promise((resolve, reject) => {
+                if(numero > 5){
+                    resolve(numero)
+                }else{
+                    reject('Numero troppo piccolo')
+                }
+            });
+        };
+
+        function moltiplicaPerDue(numero){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    let doppio = numero * 2;
+                    resolve(doppio);
+                }, 1000)
+            });
+        };
+
+        numeroCasuale()
+            .then(numero => {
+                console.log("Numero: ", numero)
+                return verificaNumero(numero);
+            })
+            .then(numero => {
+                return moltiplicaPerDue(numero);
+            })
+            .then(risultato => {
+                console.log("Risultato finale: ", risultato);
+            })
+            .catch(e => {
+                console.log("Errore: ", e)
+            })
+
+        async function numero(){
+            try{
+                let numero = await numeroCasuale()
+                console.log("Numero: ", numero);
+                await verificaNumero(numero);
+                let risultato = await moltiplicaPerDue(numero);
+                console.log("Risultato finale: ", risultato)
+            }catch(e){
+                console.log("Errore durante il fetch: ", e)
+            }
+        }
+        numero();
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = []
+        const numeroElementi = 10
+        const max_numero = 100
+        for (let i = 0; i < numeroElementi; i++) {
+            arr.push(Math.floor(Math.random()*max_numero))
+        }
+        console.log(arr)
+
+        let somma = 0
+        arr.forEach(numero => {
+            somma += numero
+        });
+        console.log(`La somma è ${somma}`)
+    </script>
+     
+</body>
+</html>

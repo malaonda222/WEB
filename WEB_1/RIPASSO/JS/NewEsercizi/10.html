@@ -1,0 +1,34 @@
+<!-- Scrivi una funzione che prende un array e restituisce un nuovo array 
+ con solo elementi unici, cioè senza duplicati. -->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimuovi Duplicati</title>
+ </head>
+ <body>
+    <script>
+        function rimuoviDuplicati(arr){
+            if(!Array.isArray(arr)){
+                return [];
+            }
+
+            let nuovoArr = []
+            for(const element of arr){
+                if(!nuovoArr.includes(element)){
+                    nuovoArr.push(element)
+                }
+            }
+        return nuovoArr
+        }
+
+        //oppure 
+        return [...new Set(arr)]
+        
+        console.log(rimuoviDuplicati([1, 1, 3, 4, 4, 6, 6]))
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,54 @@
+<!-- Obiettivo: Iterare su un array di studenti e stampare la media con un ritardo simulato.
+Traccia:
+1. Crea la funzione media_voti
+2. Crea una funzione ritarda(ms) che restituisce una Promise che si risolve dopo ms millisecondi.
+3. Usa forEach su studenti e dentro il callback
+4. Usa await ritarda(1000) per simulare il ritardo di 1 secondo prima di stampare la media.
+5. Stampa, ad esempio: "Lo studente Claudio ha una media di 8.5"  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            { nome: "Claudio", voti: [7, 9, 10, 8] },
+            { nome: "Aurelio", voti: [5, 8, 4, 7] },
+            { nome: "Silvana", voti: [10, 9, 8, 9] },
+            { nome: "Lorena", voti: [4, 10, 8, 6] },
+        ];
+
+        function media_voti(voti){
+            let somma = 0;
+            for(voto of voti){
+                somma += voto 
+            }
+            return somma / voti.length;
+        };
+
+        function ritarda(ms){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve()
+                }, ms);
+            });
+        };
+
+        async function usaRitarda(){
+            for(studente in studenti){
+                await ritarda(1000);
+                const media = media_voti(studente.voti);
+                console.log(`Lo studente ${studente.nome} ha una media di ${media}`)
+            }
+        };
+        usaRitarda()
+
+
+    </script>
+</body>
+</html>

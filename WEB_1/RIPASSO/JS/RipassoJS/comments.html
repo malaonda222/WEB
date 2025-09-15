@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let requestURL = './comments.json';
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+            const commento = request.response;
+            console.log(commento[1].email);
+            console.log(commento[1].body);
+            commento.forEach(c => {
+                console.log(c.name);
+            });
+        }
+    </script>
+</body>
+</html>

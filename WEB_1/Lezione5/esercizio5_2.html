@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confronto numeri</title>
+</head>
+<body>
+    <div id="giorno"></div>
+    <script>
+        function isinrange(num1){
+            if (num1 >= 1 && num1 <= 7){
+               return true;          
+            }else{
+                return false;
+            }
+        }
+
+        function giorno_settimana(num1){
+            if (isinrange(num1)) {
+                var giorni = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"];
+                return "Il giorno corrispondente al numero è: " + giorni[num1 - 1];
+            }else{
+                return "Peccato, non posso indovinare il giorno.";
+            }
+        }
+        
+        output = giorno_settimana(8)
+        document.getElementById("giorno").innerHTML = output;
+    </script>
+</body>
+</html>

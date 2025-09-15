@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="while"></p>
+    <p id="for"></p>
+    <script>
+        var contatore = 0
+        let risultato = "Ciclo While: " + "<br>";
+
+        while(contatore <= 40){
+            console.log(contatore);
+            contatore += 4
+        }
+
+        var cont = 0
+        while(cont <= 40){
+            risultato += cont + "<br>"
+            cont += 4
+        }
+        document.getElementById("while").innerHTML = risultato
+        
+
+        
+        let risultato2 = "Ciclo for: " + "<br>";
+
+        for(contatore2 = 0; contatore2 <= 40; contatore2+=4){
+            console.log(contatore2)
+        }
+
+        for(contatore2 = 0; contatore2 <= 40; contatore2+=4){
+           risultato2 += contatore2 + "<br>"
+        }
+
+        document.getElementById("for").innerHTML = risultato2
+    </script>
+</body>
+</html>

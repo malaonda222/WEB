@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const chiave = 'genere';
+
+        const persona = {
+            nome: "Luca",
+            cognome: "Rossi",
+            genere: "Maschio",
+            eta: 25,
+            interessi: ["snowboard", "basket", "picnic al parco"],
+            indirizzo: {
+                via: "Piazza Roma",
+                cap: "90354",
+                provincia: "MI",
+                citta: "Milano"
+            },
+            saluta: function(){
+                console.log(`Ciao sono ${persona.nome}`)
+            }
+        }
+
+        persona.nome;
+        persona.saluta();
+
+        console.log(persona['interessi'][1]);
+        console.log(persona['indirizzo']['cap']);
+
+        console.log(persona[chiave]);
+
+        persona.nome = 'Paolo';
+        persona.indirizzo.cap = '12300'
+        persona.interessi[2] = "leggere"
+        persona.colorePreferito = 'Blu'
+        console.log(persona.nome)
+        console.log(persona.indirizzo.cap)
+        console.log(persona.interessi)
+        
+    </script>
+</body>
+</html>

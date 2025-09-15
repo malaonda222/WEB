@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="stringa"></p>
+    <p id="verifica"></p>
+    <p id="numeroConvertito"></p>
+    <script>
+        var stringa = '50';
+        document.getElementById("stringa").innerHTML = "Valore stringa: " + stringa + " => " + typeof stringa;
+        console.log("Valore stringa: " + stringa + " => " + typeof stringa);
+
+        var isNumero = !isNaN(stringa);
+        document.getElementById("verifica").innerHTML = "La stringa è un numero? " + isNumero;
+        console.log("La stringa è un numero? " + isNumero);
+
+        var nuovoNumero = parseInt(stringa);
+        document.getElementById("numeroConvertito").innerHTML = "Nuovo valore: " + nuovoNumero + " => " + typeof nuovoNumero;
+        console.log("Nuovo valore: " + nuovoNumero + " => " + typeof nuovoNumero);
+               
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- Crea un array di oggetti dipendenti. Ogni oggetto deve avere:
+nome
+reparto
+valutazioni: un array di numeri da 1 a 10
+Per ogni dipendente:
+Calcola la media delle valutazioni
+Aggiungi una proprietà bonus con valore true se la media è ≥ 7.5, altrimenti false
+Stampa il nuovo array con tutte le proprietà, incluso il bonus
+(Facoltativo) Stampa solo i dipendenti con bonus in formato tabellare -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            {
+                nome: "Gianni",
+                reparto: "Vendite",
+                valutazioni: [
+                    1, 6, 7, 9
+                ]
+            },
+            {
+                nome: "Viola",
+                reparto: "Marketing",
+                valutazioni: [
+                    4, 7, 6, 9
+                ]
+            },
+            {
+                nome: "Giada",
+                reparto: "Amministrazione",
+                valutazioni: [
+                    7, 8, 4, 5
+                ]
+            }
+        ]
+
+        arr.forEach(impiegato => {
+            let somma = 0
+            for(let voto of impiegato.valutazioni){
+                somma += voto;
+            }
+            let media = somma / impiegato.valutazioni.length
+            impiegato.media = media;
+            impigeato.bonus = media >= 7.5
+            })
+            
+        console.log('Tutti gli impiegati: ')
+        for(const impiegato of arr){
+            console.log(`Nome: ${impiegato.nome}, Media: ${impiegato.media}, Bonus: ${impiegato.bonus}`)
+        }
+
+        console.log('Impiegato con bonus: ')
+        for(const impiegato of arr){
+            if(impiegato.bonus){
+                console.log(`${impiegato.nome} ha diritto al bonus`)
+            }
+        }
+    </script>
+</body>
+</html>

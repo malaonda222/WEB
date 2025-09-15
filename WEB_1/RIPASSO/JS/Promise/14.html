@@ -1,0 +1,35 @@
+<!-- Obiettivo: Creare una Promise semplice che si risolve o rifiuta dopo un timeout.
+Traccia:
+1. Crea una funzione attendi(ms) che restituisce una Promise che si risolve dopo ms millisecondi con un messaggio:
+"Attesa di X ms completata"-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const attendi = (ms) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Attesa di ${ms} ms completata`)
+                }, ms);
+            })
+        }
+
+        attendi(1000)
+            .then(result => {
+                console.log(result)
+            })
+            .catch(e => {
+                console.log(e)
+            });
+        
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        const libri = [
+            {
+                titolo: "Ciao",
+                pagine: 165
+            },
+            {
+                titolo: "Treno",
+                pagine: 156
+            },
+            {
+                titolo: "Pallone",
+                pagine: 190
+            }
+        ]
+        function CategoriaLibro(pagine){
+            if(pagine < 100){
+                return "Breve";
+            }if(pagine >= 100 && pagine <= 300){
+                return "Medio";
+            }else{
+                return "Lungo";
+            }
+        }
+
+        function valutaLibro(pagine, callback){
+            return callback(pagine);
+        }
+
+        function stampaValutazione(libro, valutaLibro){
+            const val = valutaLibro(libro.pagine, CategoriaLibro);
+            console.log(`"Titolo ${libro.titolo} - Valutazione: ${val}"`)
+        }
+
+        libri.forEach(libro => {
+            stampaValutazione(libro, valutaLibro);
+        });
+    </script>
+</body>
+</html>

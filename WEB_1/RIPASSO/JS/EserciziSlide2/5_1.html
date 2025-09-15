@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // prima opzione
+        function uguaglianza(a, b){
+            if(a === b){
+                return true
+            }else{
+                return false
+            }
+        }
+        console.log(uguaglianza(3, 3))
+
+        // seconda opzione
+        const uguaglianza = function(a, b){
+            return a === b
+        }
+
+        // terza opzione
+        const uguaglianza = (a, b) => {
+            return a === b
+        };
+        const uguaglianza = (a, b) => a === b;
+    </script>
+</body>
+</html>

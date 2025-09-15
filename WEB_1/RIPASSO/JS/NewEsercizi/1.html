@@ -1,0 +1,27 @@
+<!-- Pari o dispari
+Scrivi una funzione che accetti un numero e ritorni:
+"Pari" se il numero è pari
+"Dispari" se il numero è dispari -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pari/Dispari</title>
+</head>
+<body>
+    <script>
+        function pariDispari(numero) {
+            if (numero % 2 == 0) {
+            console.log(`${numero} Pari`)
+        }else{
+            console.log(`${numero} Dispari`)
+        }
+        }
+
+        pariDispari(3)
+    </script>
+</body>
+</html>

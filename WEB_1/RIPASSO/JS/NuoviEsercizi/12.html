@@ -1,0 +1,42 @@
+<!-- Esercizio 12 – Studenti ordinati per media
+Tema: Array di oggetti + sort
+Obiettivo: Ordinare gli studenti in base alla loro media, dal più alto al più basso.
+Traccia:
+    1. Parti da un array di studenti, ciascuno con nome e voti.
+    2. Calcola la media dei voti di ogni studente.
+    3. Ordina l’array in base alla media decrescente e crescente.
+    4. Stampa l’array ordinato (le due versioni: crescente e decrescente). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            {nome: "Erica", voti: [10, 8, 9]},
+            {nome: "Eleonora", voti: [10, 4, 5]},
+            {nome: "Tommaso", voti: [6, 7, 9]}
+        ];
+        const medieStudenti = studenti.map(studente => {
+            const totale = studenti.voti.reduce((acc, voti) => acc + voto, 0);
+            const media = totale / studente.voti.length;
+            return {
+                nome: studente.nome, 
+                voti: studente.voti,
+                media: media
+            }
+        })
+        const nuovoArr = medieStudenti()
+        const ordinatiCresc = [...nuovoArr].sort((a, b) => (a.media - b.media));
+        console.log(ordinatiCresc);
+
+        const ordinatiDecresc = [...nuovoArr].sort((a, b) => (b.media - a.media));
+        console.log(ordinatiDecresc);
+
+    </script>
+</body>
+</html>

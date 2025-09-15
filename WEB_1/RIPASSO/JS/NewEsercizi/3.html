@@ -1,0 +1,24 @@
+<!-- Scrivi una funzione che prenda in input una stringa e ritorni la stessa stringa 
+ma invertita (cioè al contrario). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverti Stringa</title>
+</head>
+<body>
+    <script>
+        function invertiStringa(parola){
+            new_stringa = "";
+            for(let i = parola.length -1; i >= 0; i--) {
+                new_stringa += parola[i]
+            }
+            return new_stringa
+        }
+
+        console.log(invertiStringa("ciao"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- Obiettivo: Creare un nuovo array con informazioni trasformate partendo da un array di studenti.
+Traccia:
+    1. Hai un array di studenti, ciascuno con proprietà nome e voti (array di numeri).
+    2. Usa map per creare un nuovo array di oggetti che contenga:
+            * nome dello studente
+            * media calcolata sui suoi voti
+    3. Stampa il nuovo array in console -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            { nome: "Luis", voti: [5, 8, 10] },
+            { nome: "Marco", voti: [7, 8, 9] },
+            { nome: "Luisa", voti: [4, 6, 7] },
+            { nome: "Maria", voti: [5, 7, 3] },
+        ];
+
+        function calcolaMedia(voti){
+            const somma = studenti.reduce((acc, curr) => acc + curr, 0);
+            const media = somma / voti.length;
+            return media.toFixed(2);
+        }
+
+        const nuovoArr = studenti.map(function(studente){
+            return {
+                nome: studente.nome, 
+                media: calcolaMedia(studente.voti)
+            }
+        });
+
+        console.log(nuovoArr)
+    </script>
+</body>
+</html>

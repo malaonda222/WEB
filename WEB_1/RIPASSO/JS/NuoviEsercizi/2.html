@@ -1,0 +1,40 @@
+<!-- Obiettivo: Trovare il numero più grande in un array.
+Traccia:
+    1. Hai un array di numeri.
+    2. Usa reduce per ottenere il massimo valore.
+    3. Stampa il risultato. -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const valori = [12, 45, 7, 22, 34];
+            
+            const massimo = valori.reduce(getMassimo);
+            
+            function getMassimo(acc, element){
+                return Math.max(acc, element);
+            }
+
+            console.log("Il numero più grande è: ", massimo);
+
+
+            // oppure senza funzione
+            const valori2 = [12, 45, 7, 22, 34];
+
+            const massimo2 = valori2.reduce((acc, element) => Math.max(acc, element), 0);
+            console.log("Il numero più grande è: ", massimo2)
+
+            // oppure 
+            const valori3 = [12, 45, 7, 22, 34];
+            const massimo3 = valori.reduce(function(acc, element){
+                return Math.max(acc, element);
+            }, 0)
+        </script>
+    </body>
+    </html>

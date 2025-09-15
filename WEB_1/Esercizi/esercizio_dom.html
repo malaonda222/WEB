@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo di registrazione</title>
+
+    <script>
+        function validaForm() {
+            
+            let cognome = document.getElementById("cognome").value;
+            let nome = document.getElementById("nome").value;
+            let matricola = document.getElementById("matricola").value;
+            let regione = document.getElementById("regione").value;
+            let email = document.getElementById("email").value;
+            let telefono = document.getElementById("telefono").value;
+            
+            if(cognome.trim() == "") {
+                alert("Errore. Cognome obbligatorio");
+                return false;
+            }
+
+            if(nome.trim() == "") {
+                alert("Errore. Nome obbligatorio");
+                return false;
+            }
+
+            if(matricola.trim() == "" || isNaN(matricola)) {
+                alert("Inserire un numero di matricola valido");
+                return false;
+            }
+            
+            if(regione == "") {
+                alert("Selezionare una regione di residenza valida");
+                return false;
+            }
+
+            if(email.trim() == "" && telefono.trim() == "") {
+                alert("Inserire almeno un contatto: indirizzo email oppure un numero di telefono");
+                return false; 
+            }
+
+            if(telefono.trim() != "" && isNaN(telefono.trim())){
+                alert("Inserire un numero di telefono valido");
+                return false; 
+            }
+            
+            return true;         
+        }
+    </script>
+</head>
+<body>
+    <h3>Modulo:</h3>
+    <form action="https://www.google.com/" method="get" onsubmit="return validaForm()">
+        COGNOME : <input type="text" name="cognome" id="cognome" maxlength="40">
+        <br>
+        NOME :<input type="text" name="nome" id="nome" maxlength="30"><br>
+        <br>
+        MATRICOLA : <input type="text" name="matricola" id="matricola" maxlength="12"><br>
+        <br>
+        REGIONE DI RESIDENZA : 
+        <select name="regione" id="regione">
+            <option value="">Selezionare regione...</option>
+            <option value="VALLE D'AOSTA">VALLE D'AOSTA</option>
+            <option value="PIEMONTE">PIEMONTE</option>
+            <option value="LIGURIA">LIGURIA</option>
+            <option value="LOMBARDIA">LOMBARDIA</option>
+            <option value="TRENTINO-ALTO ADIGE">TRENTINO-ALTO ADIGE</option>
+            <option value="VENETO">VENETO</option>
+            <option value="FRIULI VENEZIA GIULIA">FRIULI VENEZIA GIULIA</option>
+            <option value="EMILIA-ROMAGNA">EMILIA-ROMAGNA</option>
+            <option value="TOSCANA">TOSCANA</option>
+            <option value="UMBRIA">UMBRIA</option>
+            <option value="ABRUZZO">ABRUZZO</option>
+            <option value="MOLISE">MOLISE</option>
+            <option value="MARCHE">MARCHE</option>
+            <option value="LAZIO">LAZIO</option>
+            <option value="BASILICATA">BASILICATA</option>
+            <option value="CAMPANIA">CAMPANIA</option>
+            <option value="CALABRIA">CALABRIA</option>
+            <option value="PUGLIA">PUGLIA</option>
+            <option value="SICILIA">SICILIA</option>
+            <option value="SARDEGNA">SARDEGNA</option>
+        </select> <br>
+        <br>
+        EMAIL : <input type="text" name="email" id="email" maxlenght="30"><br>
+        <br>
+        TELEFONO : <input type="text" name="telefono" id="telefono" maxlenght="15"><br>
+        <br>
+        RICHIESTE PARTICOLARI :<br>
+        <textarea name="richiesta" rows="12" cols="60"></textarea>
+        <br>
+
+        <button type="submit" onclick="validaForm()">Invio</button>
+        <button type="submit" onclick="validaForm()">Reset</button>
+    </form>
+</body>
+</html>

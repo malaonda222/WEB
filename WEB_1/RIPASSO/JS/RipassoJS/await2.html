@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUser(userId) {
+            return new Promise((resolve, reject) => {
+                if (typeof userId !== 'number' || userId <= 0) {
+                    reject('Id utente non valido');
+                }else{
+                    setTimeout(() => {
+                        resolve({
+                            id: userId,
+                            name: 'Luca Bianchi'
+                        });
+                    }, 1500);
+                };
+            });
+        }
+
+        
+        function getOrders(userId) {
+            return new Promise((resolve, reject) => {
+                if (typeof userId !== 'number' || userId <= 0) {
+                    reject('Errore durante il recupero ordini');
+            }else{
+                setTimeout(() => {
+                    resolve([
+                        'Ordine #123', 
+                        'Ordine #456'
+                    ]);
+                    }, 1000);
+                }
+            });  
+            }
+        
+            async function showUserOrders() {
+                try {
+                    const utente = await getUser(1);
+                    const ordini = await getOrders(utente.id);
+                    console.log('Utente: ', utente);
+                    console.log('Ordini: ', ordini);
+                }catch (e) {
+                    console.log('Errore durante operazione di fetch: ', e);
+                }
+            }
+
+            showUserOrders();
+
+    </script>
+</body>
+</html>

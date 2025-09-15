@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const corsi = [
+            {titolo: "HTML", ore: 20},
+            {titolo: "React", ore: 35},
+            {titolo: "Javascript", ore: 25},
+        ];
+
+        const livelloCorso = corsi.map(corso => ({
+                titolo: corso.titolo,
+                ore: corso.ore, 
+                livello: corso.ore < 30 ? "base" : "avanzato"
+            }));
+
+        // oppure 
+        const livelloCorso2 = corsi.map(corso => ({
+                ...corsi,
+                livello: corso.ore >= 30 ? "avanzato" : "base"
+        }));
+        
+        console.log(livelloCorso)
+    </script>
+</body>
+</html>

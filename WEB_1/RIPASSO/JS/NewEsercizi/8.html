@@ -1,0 +1,31 @@
+<!-- Scrivi una funzione che prenda in input un array di numeri e restituisca 
+un nuovo array contenente solo i numeri pari. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtra Pari</title>
+</head>
+<body>
+    <script>
+        function filtraNumeri(arr){
+            if(!Array.isArray(arr)){
+                return [];
+            }
+            const nuovoArr = []
+            for(const element of arr){
+                if(typeof element === 'number' && element % 2 == 0){
+                    nuovoArr.push(element);
+                }
+            }
+           
+        return nuovoArr
+        }
+
+        console.log(filtraNumeri([1, 2, 3, 4, 5, 6]))
+        
+    </script>
+</body>
+</html>

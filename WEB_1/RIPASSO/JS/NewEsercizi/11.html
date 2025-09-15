@@ -1,0 +1,25 @@
+<!-- Scrivi una funzione sommaPositivi(arr) che prende un array di numeri e 
+ restituisce la somma solo dei numeri positivi. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somma Positivi</title>
+ </head>
+ <body>
+    <script>
+        function sommaPositivi(arr){
+            let sommaPos = 0
+            for(const element of arr){
+                if(element > 0){
+                    sommaPos += element
+                }
+            }
+        return sommaPos
+        }
+        console.log(sommaPositivi([1, 2 ,3 , 4, 5, 6, 7, 8]))
+    </script>
+ </body>
+ </html>

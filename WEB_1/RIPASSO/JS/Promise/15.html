@@ -1,0 +1,38 @@
+<!-- Esercizio 2.
+Obiettivo: Trasformare la Promise precedente in una funzione async.
+Traccia:
+1. Crea una funzione attendi(ms) che restituisce una Promise che si risolve dopo ms millisecondi 
+   con un messaggio: "Attesa di X ms completata"
+2. Crea una funzione async function esempio() che:
+    * aspetta 1 secondo
+    * stampa il messaggio della Promise usando await -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const attendi = (ms) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Attesa di ${ms} ms completata`)
+                }, ms);
+            })
+        }
+
+        async function esempio(){
+            try{
+                let result = await attendi(1000);
+                console.log(result);
+            }catch(e){
+                console.log("Errore: ", e)
+            }
+        }
+        esempio()
+    </script>
+</body>
+</html>

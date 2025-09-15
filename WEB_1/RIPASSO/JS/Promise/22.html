@@ -1,0 +1,76 @@
+<!--Obiettivo:
+Recuperare i post scritti da un certo utente tramite API, e stampare in console solo i titoli in MAIUSCOLO.
+Traccia:
+1- Crea una funzione asincrona chiamata prendiTitoliPost(userId).
+2- Usa fetch per ottenere i post da questa URL: https://jsonplaceholder.typicode.com/posts
+3- Converti la risposta in formato JSON con await.
+4- Filtra i post in modo che solo quelli con userId uguale a quello passato alla funzione vengano considerati.
+5- Estrai i titoli e trasformali in maiuscolo.
+6- Stampa ogni titolo in maiuscolo usando console.log. -->
+
+<!-- Versione con promise classica -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function prendiTitoliPost(userId){
+            return new Promise((resolve, reject) => {
+                fetch('https://jsonplaceholder.typicode.com/posts');
+                    then(response => {
+                        if(!response.ok){
+                            throw new Error("Errore nella risposta")
+                        }
+                        return response.json();
+                    })
+                    .then(posts => {
+                        const filtrati = posts.filter(post => post.userId === userId);
+                        const filtratiMaiuscolo = filtrati.map(post => post.title.toUpperCase());
+                        filtratiMaiuscolo.forEach(titolo => {
+                            console.log(titolo);                            
+                        });
+                        resolve(filtratiMaiuscolo)
+                    })
+                    .catch(e => {
+                        console.log("Errore durante il fetch: ", e)
+                        reject(error);
+                    })
+            })
+        }
+        prendiTitoliPost(1)
+    </script>
+</body>
+</html>
+
+
+<!-- Versione con promise moderna -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function prendiTitoliPost(userId){
+            try{
+            let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            let posts = await response.json();
+            let filtrati = posts.filter(post => post.userId === userId);
+            let filtratiMaiuscolo = filtrati.map(post => post.title.toUpperCase())
+            filtratiMaiuscolo.forEach((title) => {
+                console.log(title)
+            }); 
+            }catch(e){
+                console.log("Errore: ", e)
+            }
+        }
+        prendiTitoliPost(2);
+    </script>
+</body>
+</html>

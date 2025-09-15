@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Anno corrente e Anno di nascita</h1>
+    <p id="var-anni-persona"></p>
+    <p id="var-anni-rimanenti"></p>
+
+    <script>
+        let anno_corrente = 2025
+        let anno_nascita = 1998
+
+        let anni_persona = anno_corrente - anno_nascita
+        console.log("Anni persona: ", anni_persona)
+        
+        let anni_rimanenti = 100 - anni_persona
+        console.log("Anni rimanenti: ", anni_rimanenti)
+
+        document.getElementById("var-anni-persona").innerHTML = "Anni persona: " + anni_persona
+        document.getElementById("var-anni-rimanenti").innerHTML = "Anni rimanenti per arrivare a 100: " + anni_rimanenti
+        
+    </script>
+    
+</body>
+</html>

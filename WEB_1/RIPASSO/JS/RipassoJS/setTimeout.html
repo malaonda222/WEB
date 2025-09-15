@@ -1,0 +1,26 @@
+<!-- one shot -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Vai</button>
+    <p id="demo"></p>
+    <script>
+        let prova = setTimeout(saluta, 5000);
+        const btn = document.querySelector('button');
+
+        function saluta(){
+            alert('ciao sono in timeout');
+        }
+
+        btn.addEventListener('click', () => {
+            clearTimeout(prova);
+        })
+    </script>
+</body>
+</html>

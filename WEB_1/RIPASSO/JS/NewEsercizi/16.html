@@ -1,0 +1,33 @@
+<!-- Scrivi una funzione rimuoviDuplicati(arr) che riceve un array e 
+restituisce un nuovo array con tutti i duplicati rimossi, mantenendo l’ordine 
+originale degli elementi. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimuovi Duplicati</title>
+</head>
+<body>
+    <script>
+        function rimuoviDuplicati(arr){
+            let visti = []
+            if(arr.length == 0){
+                return "La lista è vuota";
+            }
+            if(arr.length == 1){
+                return arr;
+            }else{
+                for(const elemento of arr){
+                    if(!visti.includes(elemento)){
+                        visti.push(elemento)
+                }
+            }
+        }
+        return visti
+        }
+        console.log(rimuoviDuplicati([1, 2,]))
+    </script>
+</body>
+</html>

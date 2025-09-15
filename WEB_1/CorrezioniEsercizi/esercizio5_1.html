@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let uguaglianza = (valore1, valore2) => {
+            let risultato = false;
+
+            if(valore1 === valore2){
+                document.getElementById("esito").innerHTML = true;
+                risultato = true;
+            }else{
+                document.getElementById("esito").innerHTML = false;
+            }
+             
+            //oppure opzione 1 return 
+            return risultato;
+        }
+        console.log(uguaglianza(5, 5));
+        document.getElementById("esito").innerHTML = uguaglianza(6, 6);
+    </script>
+</head>
+<body>
+    <button onclick="uguaglianza(6, 6)">CLICK</button>
+    <h1 id="esito"></h1>
+</body>
+</html>

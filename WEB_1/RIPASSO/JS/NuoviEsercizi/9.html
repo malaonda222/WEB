@@ -1,0 +1,50 @@
+<!-- Obiettivo: Calcolare la media dei voti degli studenti promossi.
+Traccia:
+Calcola la media di ciascun studente con map.
+Filtra solo gli studenti con media ≥ 6.
+Calcola la media generale dei promossi con reduce -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            { nome: "Alice", voti: [8, 7, 9] },
+            { nome: "Bruno", voti: [5, 6, 4] },
+            { nome: "Carla", voti: [9, 9, 10] },
+            { nome: "Davide", voti: [6, 6, 7] }
+        ];
+
+        function media(voti){
+            const somma = voti.reduce((acc, voto) => acc + voto, 0);
+            return somma/voti.length; 
+        };
+
+        // oppure 
+        const calcolaMedia = voti => voti.reduce((acc, voto) => acc + voto, 0) / voti.length;
+
+
+        
+        const studentiConMedia = studenti.map(studente => {
+            return {
+                ...studente,
+                media: media(studente.voti)
+            };
+        });
+
+        const studentiPromossi = studentiConMedia.filter(studente => studente.media >= 6);
+
+        const mediaGenerale = studentiPromossi.reduce((acc, studente) => acc, studente.media, 0) / studentiPromossi.length; 
+        
+        console.log("Studenti con media: ", studentiConMedia);
+        console.log("Studenti promossi: ", studentiPromossi);
+        console.log("Media generale: ", mediaGenerale.tofixed(2));
+    </script>
+
+</body>
+</html>

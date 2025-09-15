@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="inziale"></p>
+    <p id="finale"></p>
+
+    <script>
+        // lato Client
+        var numero = 100;
+        var frase = "Valore iniziale: " + numero;
+        document.getElementById("number").innerHTML = frase;
+
+        var numero = 70;
+        var frase = "Valore finale: " + numero;
+        document.getElementById("number").innerHTML += "<br>" + frase;
+
+        // lato Server
+        var numero1 = 100;
+        console.log("Valore iniziale: " + numero1);
+
+        var numero1 = 70;
+        console.log("Valore finale: " + numero1);
+    </script>
+</body>
+</html>

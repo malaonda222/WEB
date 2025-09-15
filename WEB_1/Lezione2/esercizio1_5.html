@@ -1,0 +1,33 @@
+/*Creare un progetto Javascript che memorizza all’interno di una variabile i giorni della settimana
+separati dalla virgola e stampare a video tramite console.log() il risultato. Scrivere il codice in modo
+che, facendo la modifica ad un solo valore, i giorni della settimana vengono visualizzati uno sotto
+l’altro senza la virgola.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Giorni della settimana</h1>
+    <p id="giorni"></p>
+    <p id="risultato"></p>
+    <script>
+        let g = "lunedì,martedì,mercoledì,giovedì,venerdì,sabato,domenica";
+        document.getElementById("giorni").innerHTML = "Giorni della settimana: " + g;
+        console.log(g);
+
+        let risultato = g.replace(/,/g, "<br>");
+        document.getElementById("risultato").innerHTML = `Risultato:<br> ${risultato}`;
+        console.log(risultato);
+
+        //oppure 
+        // let risultato = g.replace(/,/g, "\n");
+        // document.getElementById("risultato").innerHTML = "Risultato:\n" + risultato;
+        // console.log(risultato);
+
+    </script>
+</body>
+</html>

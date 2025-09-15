@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form da compilare:</title>
+
+    <script>
+        function controllo() {
+            let cognome = document.getElementById("cognome".value);
+            let nome = document.getElementById("nome").value;
+
+            let mex = document.getElementById("messaggio");
+
+            let errori = []
+
+            if(cognome == "") {
+                mex.innerHTML = "Errore cognome obbligatorio";
+            }
+
+            if(nome == "") {
+                mex.innerHTML = "Errore nome obbligatorio"
+            }
+            
+            if(errori.length > 0) {
+                mex.innterHTML = errori.join("<br>");
+            }else{
+                mex.innerHTML = ""
+                }
+        }
+    </script>
+</head>
+<body>
+    <form action="https://www.google.com/" method="get" onsubmit="controllo()"></form>
+        <h3>Modulo:</h3>
+        COGNOME: <input type="text" name="cognome" id="cognome" maxlength="40"><br>
+        NOME: <input type="text" name="nome" id="nome" maxlength="30"><br>
+        <input type="button" onclick="controllo()" value="invia" id="messaggio">
+    </form>
+</body>
+</html>

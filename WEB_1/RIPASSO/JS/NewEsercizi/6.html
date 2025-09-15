@@ -1,0 +1,22 @@
+<!-- Scrivi una funzione che prenda una frase come input e ritorni il 
+ numero totale di parole presenti -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Parole</title>
+</head>
+<body>
+    <script>
+        function contaParole(frase){
+            const stringaSenzaSpazi = frase.trim();
+            const parole = stringaSenzaSpazi.split(/\s+/);
+            return parole.length;
+        }
+
+        console.log(contaParole("QUesta è una frase di esempio"))
+    </script>
+</body>
+</html>

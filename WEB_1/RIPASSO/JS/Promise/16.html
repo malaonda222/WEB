@@ -1,0 +1,45 @@
+<!-- 3. Gestisci eventuali errori con try/catch.
+Esercizio 3 - sequenza di await
+Obiettivo: Chiamare più volte la stessa Promise in sequenza e stampare i risultati uno alla volta.
+Traccia:
+1. Usa attendi(ms) (esercizio precedente)
+2. Crea una funzione async che:
+    * chiama await attende(1000) tre volte consecutive
+    * stampa un messaggio diverso ogni volta (es. "Primo", "Secondo", "Terzo") -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const attendi = (ms) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Attesa di ${ms} ms completata`)
+                }, ms);
+            })
+        };
+
+        async function attende(){
+            try{
+                let primoMess = await attendi(1000)
+                console.log("Primo messaggio: ", primoMess)
+
+                let secondoMess = await attendi(1000)
+                console.log("Secondo messaggio: ", secondoMess)
+
+                let terzoMess = await attendi(1000)
+                console.log("Terzo messaggio: ", terzoMess)
+            }catch(e){
+                console.log("Errore: ", e)
+            }
+        };
+
+        attende();
+    </script>
+</body>
+</html>

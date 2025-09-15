@@ -1,0 +1,39 @@
+<!-- Hai un array di oggetti che rappresentano degli studenti. Ogni studente ha un nome e un array 
+di voti: 
+Usa map() per creare un nuovo array che contiene oggetti con il nome dello studente e la media 
+dei suoi voti.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            { nome: "Anna", voti: [7, 8, 6] },
+            { nome: "Paolo", voti: [9, 6, 8] },
+            { nome: "Sara", voti: [5, 7, 8] }
+        ];
+        
+        function media(voti){
+            let somma = 0
+            for(let voto of voti){
+                somma += voto
+            }
+            return somma/voti.length
+        }
+
+        const result = studenti.map(studente => {
+            return{
+                    nome: studente.nome,
+                    media: media(studente.voti)
+                    };
+            });
+    </script>
+
+</body>
+</html>

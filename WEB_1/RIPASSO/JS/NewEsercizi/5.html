@@ -1,0 +1,26 @@
+<!-- Scrivi una funzione che prenda una stringa come input e verifichi se è un 
+ palindromo, cioè se si legge uguale da sinistra a destra e da destra a sinistra. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromo</title>
+</head>
+<body>
+    <script>
+        function palindromo(stringa){
+            stringa = stringa.toLowerCase().replaceAll(' ', '')
+            for(let i = 0; i < stringa.length; i ++){
+                if(stringa[i] != stringa[stringa.length -1 -i]){
+                    return false;
+            }
+        }
+        return true;
+        }
+
+        palindromo("anna")
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const atleti = [
+            { nome: "Giulia", tempi: [12.4, 11.8, 12.1] },
+            { nome: "Marco", tempi: [10.2, 10.4, 10.3] },
+            { nome: "Sofia", tempi: [11.5, 11.7, 11.6] },
+        ];
+
+        function mediaTempi(tempi){
+            const sommaTempi = tempi.reduce((acc, tempo) => acc + tempo, 0)
+            return sommaTempi / tempi.length;
+        };
+
+        function ritarda(ms){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve()
+                }, ms)
+            });
+        }; 
+
+        const mediaAtleti = atleti.map((atleta => {
+            return {
+                nome: atleta.nome,
+                tempi: atleta.tempi,
+                media: mediaTempi(atleta.tempi)
+            };
+        }));
+
+        async function analizzaAtleti(){
+            for(atleta of atleti){
+                await ritarda(1500);
+                const media = mediaTempi(atleta.tempi)
+                console.log(`Atleta ${atleta.nome} ha un tempo media di ${media} secondi`)
+            }
+        }
+        analizzaAtleti();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/*Creare un progetto Javascript che dichiara una variabile di tipo stringa con valore ‘50’, stampare
+a video il valore ed il tipo. Verificare tramite una funzione globale se il valore è di tipo numerico
+oppure no e stampare a video l’esito (true o false).
+Successivamente convertire la stringa in un numero e stampare a video il valore con il tipo
+(che ora è cambiato)*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Valore della variabile "c"</h1>
+    <p id="variabile-c"></p>
+    <script>
+        let c = "50" 
+        document.getElementById("variabile-c").innerHTML = "Valore di c: " + c;
+        console.log("Tipo di valore: ", typeof(c));
+        
+        let risultato = isNaN(c);
+        console.log(risultato);
+
+        let z = parseInt(c);
+        console.log("Tipo di valore: ", typeof(z)); 
+
+    </script>
+    
+</body>
+</html>

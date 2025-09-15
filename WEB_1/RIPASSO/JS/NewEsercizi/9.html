@@ -1,0 +1,32 @@
+<!-- Scrivi una funzione che prende in input un array di numeri e restituisce 
+la media aritmetica -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Media</title>
+</head>
+<body>
+    <script>
+        function calcolaMedia(arr){
+            if (!Array.isArray(arr) || arr.length === 0){
+                return 0;
+            }
+            let somma = 0
+            let counter = 0
+            for(const element of arr){
+                if(typeof element === 'number'){
+                    somma += element;
+                    counter += 1
+                }
+            }
+            if (counter === 0) return 0;
+            return somma/counter
+            }
+            
+        console.log(calcolaMedia([10, 20, 30, 40]))
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- Scrivi una funzione sommaDa1aN(n) che restituisce la somma di tutti i 
+ numeri interi da 1 a n. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somma da 1 a N</title>
+</head>
+<body>
+    <script>
+        function sommaDa1aN(n){
+            let somma = 0
+            if(n <= 0) return 'Impossibile, inserisci un numero positivo'
+            for(let i = 1; i <= n; i++){
+                somma += i
+            }
+            return somma 
+        }
+        console.log(sommaDa1aN(5))
+    </script>
+</body>
+</html>

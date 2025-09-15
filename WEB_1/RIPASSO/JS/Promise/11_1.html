@@ -1,0 +1,70 @@
+<!--Funzione asincrona che calcola il totale delle ore-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const studenti = [
+            {
+                nome: "Gianni",
+                corsi: [
+                    { nomeCorso: "Matematica", ore: 10 },
+                    { nomeCorso: "Informatica", ore: 12 },
+                    { nomeCorso: "Fisica", ore: 8 }
+                ]
+            },
+            {
+                nome: "Aurelio",
+                corsi: [
+                    { nomeCorso: "Matematica", ore: 9 },
+                    { nomeCorso: "Chimica", ore: 11 },
+                    { nomeCorso: "Biologia", ore: 7 }
+                ]
+            },
+            {
+                nome: "Silvana",
+                corsi: [
+                    { nomeCorso: "Informatica", ore: 15 },
+                    { nomeCorso: "Fisica", ore: 10 }
+                ]
+            }
+        ]; 
+        function totaleOreStudenti(studenti){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const oreStudenti = studenti.map((studente) => ({
+                        nome: studente.nome,
+                        oreTotali: studente.corsi.reduce((acc, corso) => acc + corso.ore, 0)
+                    }));
+                    resolve(oreStudenti);
+                }, 1000);
+            });
+        };
+
+        totaleOreStudenti(studenti)
+            .then(risultato => {
+                console.log("Ore totali per ogni studente: ", risultato)
+            })
+            .catch(e => {
+                console.log("Errore: ", e)
+            });
+
+
+        async function calcolo(){
+            try{
+                let risultato = await totaleOreStudenti(studenti);
+                console.log("Risultato: ", risultato)
+            }catch(e){
+                console.log("Errore: ", e)
+            }
+        }
+
+        calcolo(); 
+    </script>
+</body>
+</html>

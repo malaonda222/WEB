@@ -1,0 +1,45 @@
+<!-- Obiettivo: Creare un nuovo array con informazioni calcolate sui prezzi.
+Traccia:
+    1. Hai un array di prodotti, ciascuno con nome e prezzo.
+    2. Usa map per creare un nuovo array che aggiunga l’IVA al prezzo (22%).
+    3. Ogni oggetto del nuovo array deve contenere:
+        * nome
+        * prezzoNetto (quello originale)
+        * prezzoIvato (con IVA inclusa, arrotondato a due decimali).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prodotti = [
+            { nome: "Shampoo", prezzo: 2.99 },
+            { nome: "Latte", prezzo: 0.99 },
+            { nome: "Petto di Pollo", prezzo: 8.49 },
+            { nome: "Avena", prezzo: 0.99 },
+            { nome: "Yogurt Greco", prezzo: 2.65 },
+        ];
+
+        function aggiungiIva(prezzo){
+            const iva = 0.22;
+            const ivaPrezzo = prezzo * iva;
+            const prezzoIvato = (prezzo + ivaPrezzo).toFixed(2);
+            return prezzoIvato; 
+        }
+
+        const newProdotti = prodotti.map(function(prodotto){
+            return {
+                nome: prodotto.nome,
+                prezzoNetto: prodotto.prezzo,
+                prezzoIvato: aggiungiIva(prodotto.prezzo)
+            };
+        });
+
+        console.log(newProdotti);
+    </script>
+</body>
+</html>

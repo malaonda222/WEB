@@ -16,4 +16,4 @@ const TodoList = ({tasks, handleDeleteTask, handleToggleTask}) => {
         );
     };
 
-    export default TodoList;
+export default TodoList;

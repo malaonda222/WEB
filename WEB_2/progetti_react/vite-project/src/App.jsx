@@ -7,6 +7,7 @@ import Saluto from "./EserciziEstate/esercizio1/Saluto";
 import UserCard from "./EserciziEstate/esercizio2/CardUtente.jsx";
 import MenuRistorante from "./EserciziEstate/esercizio3/MenuRistorante.jsx";
 import Termostato from "./EserciziEstate/esercizio4/Termostato.jsx";
+import Menu from "./EserciziEstate/Menu.jsx";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -29,7 +30,9 @@ function App() {
   ];
   return (
     // <MenuRistorante></MenuRistorante>
-    <Termostato></Termostato>
+    // <Termostato></Termostato>
+
+    <Menu/>
   )
     // <UserCrud></UserCrud>
     // <Saluto></Saluto>

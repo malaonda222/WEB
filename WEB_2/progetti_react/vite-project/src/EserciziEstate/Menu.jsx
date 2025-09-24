@@ -4,6 +4,12 @@ import UserCard from "./esercizio2/CardUtente";
 import MenuRistorante from "./esercizio3/MenuRistorante";
 import Termostato from "./esercizio4/Termostato";
 
+
+// creare un array con le voci di menu; prendere da bootstrap un menu; 
+// i map diventeranno le voci del menu
+// use state per la voce di menu corrente e quando si chiama l'oggetto viene chiamato il setItem
+//  
+
 const Menu = () => {
   const [item, setItem] = useState("");
 

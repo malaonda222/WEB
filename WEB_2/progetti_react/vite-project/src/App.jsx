@@ -8,31 +8,33 @@ import UserCard from "./EserciziEstate/esercizio2/CardUtente.jsx";
 import MenuRistorante from "./EserciziEstate/esercizio3/MenuRistorante.jsx";
 import Termostato from "./EserciziEstate/esercizio4/Termostato.jsx";
 import Menu from "./EserciziEstate/Menu.jsx";
+import TodoApp from "./EserciziEstate/esercizio11/TodoApp.jsx";
 
 function App() {
   // const [count, setCount] = useState(0)
-  const persone = [
-    {
-      nome: "Roberto",
-      email: "rob@rob.it",
-      imgUrl: "https://placehold.co/600x400",
-    },
-    {
-      nome: "Gino",
-      email: "gin@gin.it",
-      imgUrl: "https://placehold.co/600x400",
-    },
-    {
-      nome: "Ugo",
-      email: "ugo@ugo.it",
-      imgUrl: "https://placehold.co/600x400",
-    },
-  ];
+  // const persone = [
+  //   {
+  //     nome: "Roberto",
+  //     email: "rob@rob.it",
+  //     imgUrl: "https://placehold.co/600x400",
+  //   },
+  //   {
+  //     nome: "Gino",
+  //     email: "gin@gin.it",
+  //     imgUrl: "https://placehold.co/600x400",
+  //   },
+  //   {
+  //     nome: "Ugo",
+  //     email: "ugo@ugo.it",
+  //     imgUrl: "https://placehold.co/600x400",
+  //   },
+  // ];
   return (
     // <MenuRistorante></MenuRistorante>
     // <Termostato></Termostato>
 
-    <Menu/>
+    // <Menu/>
+    <TodoApp></TodoApp>
   )
     // <UserCrud></UserCrud>
     // <Saluto></Saluto>

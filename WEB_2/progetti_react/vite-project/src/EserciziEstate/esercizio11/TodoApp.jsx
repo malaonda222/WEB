@@ -1,19 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
+import {
+    API_URL, 
+    fetchTasksService, 
+    deleteTaskService,
+    addTaskService, 
+    toggleTaskService,
+    updateTaskService,
+} from "./api";
 
 
-const API_URL = 'http://localhost:4000/tasks';
+export const AppContext = createContext();
 
 const TodoApp = () => {
-
-    const [tasks, setTasks] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    const [tasks, setTasks] = useState([]);
+    
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const fetchTasks = async () => {
         try {
-            const response = await fetch(API_URL);
-            const data = await response.json();
-            if(!response.ok) throw new Error("Errore nella fetch")
+            const data = await fetchTasksService();
             setTasks(data);
         }catch(errore){
             setError(e);
@@ -23,23 +31,43 @@ const TodoApp = () => {
     };
 
     const deleteTask = async (id) => {
-        await fetch(API_URL+"/"+id,{method:"DELETE"});
+        await deleteTaskService(id);
+        fetchTasks();
+    };
+
+    const addTask = async  (text) => {
+        await addTaskService(text);
+        fetchTasks();
+        };
+    };
+    // addTask la chiamo quando clicco Inserisci 
+    // inserendo una nuova task, viene inserito il task passato dal figlio e viene settato a False il completed
+
+    const toggleTask= async (id, completed) => {
+        await toggleTaskService(id, completed);
+        fetchTasks();
+    };
+    
+    const updateTask= async (id, text) => {
+        await updateTaskService(id, text);
         fetchTasks();
     };
 
     useEffect(() => {
-        fetchTasks()
-    }, [])
+        fetchTasks();
+    }, []);
 
+    if (loading) return <div className="alert alert-info">Sto caricando...</div>;
+    if (error) return <div className="alert alert-danger">Errore: {error}</div>;
 
     return (
+        <AppContext.Provider value={{tasks, loading, error, fetchTasks, addTask, deleteTask, toggleTask, updateTask}}>
         <div className="container m-4">
             <h1 className="mb-4">To Do List</h1>
-            <TodoForm/>
-            <TodoList tasks={tasks} onDeleteTask={deleteTask}/> 
+            <TodoForm addTask={addTask}/>
+            <TodoList /> 
         </div>
-
+        </AppContext.Provider>
     );
-};
 
 export default TodoApp;

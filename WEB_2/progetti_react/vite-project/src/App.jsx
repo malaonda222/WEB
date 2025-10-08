@@ -1,14 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import UserCrud from "./UserCrud";
-import Saluto from "./EserciziEstate/esercizio1/Saluto";
-import UserCard from "./EserciziEstate/esercizio2/CardUtente.jsx";
-import MenuRistorante from "./EserciziEstate/esercizio3/MenuRistorante.jsx";
-import Termostato from "./EserciziEstate/esercizio4/Termostato.jsx";
-import Menu from "./EserciziEstate/Menu.jsx";
-import TodoApp from "./EserciziEstate/esercizio11/TodoApp.jsx";
+// import { useState } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
+// import "./App.css";
+// import UserCrud from "./UserCrud";
+// import Saluto from "./EserciziEstate/esercizio1/Saluto";
+// import UserCard from "./EserciziEstate/esercizio2/CardUtente.jsx";
+// import MenuRistorante from "./EserciziEstate/esercizio3/MenuRistorante.jsx";
+// import Termostato from "./EserciziEstate/esercizio4/Termostato.jsx";
+// import Menu from "./EserciziEstate/Menu.jsx";
+// import TodoApp from "./EserciziEstate/esercizio11/TodoApp.jsx";
+import MainComponent from "./MainComponent.jsx";
+
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -34,7 +36,8 @@ function App() {
     // <Termostato></Termostato>
 
     // <Menu/>
-    <TodoApp></TodoApp>
+    // <TodoApp></TodoApp>
+    <MainComponent></MainComponent>
   )
     // <UserCrud></UserCrud>
     // <Saluto></Saluto>

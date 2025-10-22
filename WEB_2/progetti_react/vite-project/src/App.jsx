@@ -9,7 +9,8 @@
 // import Termostato from "./EserciziEstate/esercizio4/Termostato.jsx";
 // import Menu from "./EserciziEstate/Menu.jsx";
 // import TodoApp from "./EserciziEstate/esercizio11/TodoApp.jsx";
-import MainComponent from "./MainComponent.jsx";
+// import MainComponent from "./MainComponent.jsx";
+import ProvaRouter from "./Router/ProvaRouter";
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
 
     // <Menu/>
     // <TodoApp></TodoApp>
-    <MainComponent></MainComponent>
+    // <MainComponent></MainComponent>
+    <ProvaRouter></ProvaRouter>
   )
     // <UserCrud></UserCrud>
     // <Saluto></Saluto>

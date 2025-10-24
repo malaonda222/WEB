@@ -10,7 +10,14 @@
 // import Menu from "./EserciziEstate/Menu.jsx";
 // import TodoApp from "./EserciziEstate/esercizio11/TodoApp.jsx";
 // import MainComponent from "./MainComponent.jsx";
-import ProvaRouter from "./Router/ProvaRouter";
+// import ProvaRouter from "./Router/ProvaRouter";
+// import MostraNascondi from "./EserciziBaseUseState/MostraNascondi";
+// import Mostranascondi1 from "./EserciziBaseUseState/MostraNascondi1";
+// import CambioColoreTesto from "./EserciziBaseUseState/CambioColoreTesto";
+// import CambioColoreTesto1 from "./EserciziBaseUseState/CambioColoreTesto1";
+// import EchoInput from "./EserciziBaseUseState/EchoInput";
+import EchoInput1 from "./EserciziBaseUseState/EchoInput1";
+import SelettorePizza from "./EserciziBaseUseState/SelettorePizza";
 
 
 function App() {
@@ -39,8 +46,8 @@ function App() {
     // <Menu/>
     // <TodoApp></TodoApp>
     // <MainComponent></MainComponent>
-    <ProvaRouter></ProvaRouter>
-  )
+  //   <ProvaRouter></ProvaRouter>
+  // )
     // <UserCrud></UserCrud>
     // <Saluto></Saluto>
     // <>
@@ -85,6 +92,14 @@ function App() {
   //     </p>
   //   </>
   // )
+  // <MostraNascondi/>
+  // <Mostranascondi1/>
+  // <CambioColoreTesto/>
+  // <CambioColoreTesto1/>
+  // <EchoInput/>
+  // <EchoInput1/>
+  <SelettorePizza/>
+)
 }
 
 export default App;

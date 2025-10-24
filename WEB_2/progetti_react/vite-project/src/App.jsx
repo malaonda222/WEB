@@ -15,10 +15,13 @@
 // import Mostranascondi1 from "./EserciziBaseUseState/MostraNascondi1";
 // import CambioColoreTesto from "./EserciziBaseUseState/CambioColoreTesto";
 // import CambioColoreTesto1 from "./EserciziBaseUseState/CambioColoreTesto1";
-// import EchoInput from "./EserciziBaseUseState/EchoInput";
-import EchoInput1 from "./EserciziBaseUseState/EchoInput1";
-import SelettorePizza from "./EserciziBaseUseState/SelettorePizza";
-
+// // import EchoInput from "./EserciziBaseUseState/EchoInput";
+// import EchoInput1 from "./EserciziBaseUseState/EchoInput1";
+// import SelettorePizza from "./EserciziBaseUseState/SelettorePizza";
+// import Background from "./EserciziUseState/Background";
+// import Contatore from "./EserciziUseState/Contatore";
+import AggiungiElimina from "./EserciziUseState/AggiungiElimina";
+import CountDown from "./EserciziUseState/Countdown";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -98,7 +101,11 @@ function App() {
   // <CambioColoreTesto1/>
   // <EchoInput/>
   // <EchoInput1/>
-  <SelettorePizza/>
+  // <SelettorePizza/>
+  // <Contatore/>
+  // <Background/>
+  // <CountDown></CountDown>
+  <AggiungiElimina/>
 )
 }
 

@@ -16,7 +16,7 @@ const SelettorePizza = () => {
 
     return (
         <div>
-            <h4>Scegli la tua fucking pizza 🍕</h4>
+            <h4>Scegli la tua pizza 🍕</h4>
             <select value={pizza} onChange={handleChange}>
                 <option value="" disabled>Pizze...</option>
                 <option value={'diavola'}>Diavola</option>

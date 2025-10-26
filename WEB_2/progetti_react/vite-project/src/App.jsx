@@ -22,6 +22,7 @@
 // import Contatore from "./EserciziUseState/Contatore";
 import AggiungiElimina from "./EserciziUseState/AggiungiElimina";
 import CountDown from "./EserciziUseState/Countdown";
+import Esercizio2 from "./EserciziBaseUseEffect/Esercizio2";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -105,7 +106,8 @@ function App() {
   // <Contatore/>
   // <Background/>
   // <CountDown></CountDown>
-  <AggiungiElimina/>
+  // <AggiungiElimina/>
+  <Esercizio2/>
 )
 }
 

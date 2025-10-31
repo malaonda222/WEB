@@ -20,9 +20,10 @@
 // import SelettorePizza from "./EserciziBaseUseState/SelettorePizza";
 // import Background from "./EserciziUseState/Background";
 // import Contatore from "./EserciziUseState/Contatore";
-import AggiungiElimina from "./EserciziUseState/AggiungiElimina";
-import CountDown from "./EserciziUseState/Countdown";
-import Esercizio2 from "./EserciziBaseUseEffect/Esercizio2";
+// import AggiungiElimina from "./EserciziUseState/AggiungiElimina";
+// import CountDown from "./EserciziUseState/Countdown";
+// import Esercizio2 from "./EserciziBaseUseEffect/Esercizio2";
+import CheckboxMultiple from "./EsercizioOttobre/CheckboxMultiple";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -107,7 +108,8 @@ function App() {
   // <Background/>
   // <CountDown></CountDown>
   // <AggiungiElimina/>
-  <Esercizio2/>
+  // <Esercizio2/>
+  <CheckboxMultiple></CheckboxMultiple>
 )
 }
 
